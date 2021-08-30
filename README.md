@@ -19,3 +19,26 @@ Task Master is an android application to manage daily tasks built by android stu
 * On the “Add a Task” page, allow users to type in details about a new task, specifically a title and a body. When users click the “submit” button, show a “submitted!” label on the page.
 
 ![hompage](./screenshots/addTask.png)
+
+# lab27:Adding Data to TaskMaster
+
+## Homepage
+
+* The main page contain three different buttons with hardcoded task titles.
+* The homepage also contain a button to visit the Settings page, and once the user has entered their username, it should display “{username}’s tasks” above the three task buttons.
+
+![hompage](./screenshots/main.png)
+
+## Task Detail Page
+
+* It have a title at the top of the page containe task name , and a Lorem Ipsum description.
+
+![hompage](./screenshots/t1.png)
+![hompage](./screenshots/t2.png)
+![hompage](./screenshots/t3.png)
+
+## Settings Page
+
+* It allow users to enter their username and hit save.
+
+![hompage](./screenshots/setting.png)
