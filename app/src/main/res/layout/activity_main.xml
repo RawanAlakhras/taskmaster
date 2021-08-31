@@ -23,40 +23,37 @@
         android:text="My Tasks"
 
         />
-    <LinearLayout
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/task1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:onClick="TaskDetail"
 
-            android:text="challenge"
-            />
+    />
 
-        <Button
-            android:id="@+id/task2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:onClick="TaskDetail"
-            android:text="lab" />
+<!--    <TextView-->
+<!--        android:id="@+id/title"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/text_margin"-->
+<!--        android:textAppearance="?attr/textAppearanceListItem" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/body"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/text_margin"-->
+<!--        android:textAppearance="?attr/textAppearanceListItem" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/state"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/text_margin"-->
+<!--        android:textAppearance="?attr/textAppearanceListItem" />-->
 
-        <Button
-            android:id="@+id/task3"
-            android:layout_width="wrap_content"
-            android:layout_margin="2dp"
-            android:layout_height="wrap_content"
-            android:onClick="TaskDetail"
-            android:text="reading" />
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"

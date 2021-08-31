@@ -42,3 +42,7 @@ Task Master is an android application to manage daily tasks built by android stu
 * It allow users to enter their username and hit save.
 
 ![hompage](./screenshots/setting.png)
+
+# lab28:RecyclerViews for Displaying Lists of Data
+
+![hompage](./screenshots/lab-28.png)
