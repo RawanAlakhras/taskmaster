@@ -3,6 +3,7 @@ package com.example.taskmaster;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
         String username = sharedPreferences.getString("name", "my");
         TextView tv=findViewById(R.id.header);
         tv.setText(username +  welcomeMessage);
-        List<Task> allTasks = new ArrayList<Task>();
-        allTasks.add(new Task("Reading","read class 29","new"));
-        allTasks.add(new Task("lab","lab class 28","in progress"));
-        allTasks.add(new Task("code challenge","challenge 28","assigned"));
+
+        TaskDatabase db = Room.databaseBuilder(getApplicationContext(),TaskDatabase.class, "task_item").allowMainThreadQueries().build();
+       TaskDao taskDao=db.taskDao();
+        List<Task> allTasks = taskDao.getAll();
+//        allTasks.add(new Task("Reading","read class 29","new"));
+//        allTasks.add(new Task("lab","lab class 28","in progress"));
+//        allTasks.add(new Task("code challenge","challenge 28","assigned"));
 //         get the recycler view
         RecyclerView allStudentsRecuclerView = findViewById(R.id.ListRecyclerView);
         // set a layout manager for this view

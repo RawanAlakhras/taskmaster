@@ -3,6 +3,7 @@ package com.example.taskmaster;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,20 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.itemView = itemView;
+            //set on click on fragement to handel item's click
+            itemView.findViewById(R.id.frag);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(), TaskDetail.class);
+                    //send data to taskDescription activity
+                    i.putExtra("title", task.title);
+                    i.putExtra("body", task.body);
+                    i.putExtra("state", task.state);
+                    v.getContext().startActivity(i);
+                }
+            });
+
         }
     }
 

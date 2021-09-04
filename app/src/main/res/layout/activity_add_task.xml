@@ -14,22 +14,22 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
+        android:text="Add Task"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="40dp"
-        android:layout_marginBottom="40dp"
-        android:text="Add Task"
-        android:gravity="center_horizontal" />
+        android:textSize="40dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Task title"
         />
     <EditText
 
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,20 +37,34 @@
         android:layout_marginBottom="40dp"
         android:text="My Task" />
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/body2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Task Description"
         />
     <EditText
 
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_marginBottom="40dp"
         android:text="Do something" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="the state of task" />
+
+    <EditText
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Active" />
+
 
     <Button
         android:id="@+id/button3"
@@ -59,6 +73,13 @@
         android:layout_marginTop="40dp"
         android:text="Add Task"
         android:onClick="submitted"/>
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="go to home"
+        android:onClick="home"/>
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -67,6 +88,7 @@
         android:layout_marginTop="40dp"
         android:text="Total Tasks :0"
         />
+
 
 
 </LinearLayout>
