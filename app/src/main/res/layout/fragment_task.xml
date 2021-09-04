@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/frag"
     android:orientation="vertical">
     <TextView
         android:id="@+id/title"
         android:background="@color/cyan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="TaskDetail"
+
         android:padding="5dp"
         android:textAppearance="?attr/textAppearanceListItem" />
    <LinearLayout
