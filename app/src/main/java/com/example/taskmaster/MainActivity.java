@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv=findViewById(R.id.header);
         tv.setText(username +  welcomeMessage);
 
-        TaskDatabase db = Room.databaseBuilder(getApplicationContext(),TaskDatabase.class, "task_item").allowMainThreadQueries().build();
+        TaskDatabase db = Room.databaseBuilder(getApplicationContext(),TaskDatabase.class, "task_item3").allowMainThreadQueries().build();
        TaskDao taskDao=db.taskDao();
         List<Task> allTasks = taskDao.getAll();
 //        allTasks.add(new Task("Reading","read class 29","new"));
