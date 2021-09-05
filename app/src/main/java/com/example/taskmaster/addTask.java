@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class addTask extends AppCompatActivity {
-    public static final String TASK_ITEM = "task_item";
+    public static final String TASK_ITEM = "task_item3";
     public TaskDatabase db;
     public  TaskDao taskDao;
 

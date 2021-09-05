@@ -16,7 +16,7 @@
         android:ems="10"
         android:inputType="textPersonName"
        android:layout_marginBottom="40dp"
-        android:text="Enter your name" />
+        android:text="" />
 
     <Button
         android:id="@+id/button4"

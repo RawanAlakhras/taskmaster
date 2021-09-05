@@ -35,7 +35,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_marginBottom="40dp"
-        android:text="My Task" />
+        android:text="" />
     <TextView
         android:id="@+id/body2"
         android:layout_width="match_parent"
