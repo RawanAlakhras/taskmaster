@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //                        Log.i("My",allTasks.toString());
 //                        Log.i("My",allTasks.toString());
                     }
-
+                handler.sendEmptyMessage(1);
                 },
                 error -> Log.e("MyAmplifyApp", "Query failure", error)
         );
