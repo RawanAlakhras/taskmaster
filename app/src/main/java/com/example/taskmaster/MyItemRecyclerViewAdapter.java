@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.amplifyframework.datastore.generated.model.Todo;
 import com.example.taskmaster.dummy.DummyContent.DummyItem;
 
 import java.util.ArrayList;
@@ -21,20 +22,20 @@ import java.util.List;
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
      List<DummyItem> mValues;
-     List<Task> allTask=new ArrayList<>();
+     List<Todo> allTask=new ArrayList<>();
 
-    public MyItemRecyclerViewAdapter(List<DummyItem> items, List<Task> allTask) {
+    public MyItemRecyclerViewAdapter(List<DummyItem> items, List<Todo> allTask) {
         mValues = items;
         this.allTask = allTask;
     }
-    public MyItemRecyclerViewAdapter(List<Task> task) {
+    public MyItemRecyclerViewAdapter(List<Todo> task) {
         allTask = task;
     }
 
     // 3- create the ViewHolder class (Wraps the data and the view)
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // 4- The model object
-        public Task task;
+        public Todo task;
         // 5- view object
         View itemView;
         // + setting the itemView value
@@ -50,9 +51,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 public void onClick(View v) {
                     Intent i = new Intent(v.getContext(), TaskDetail.class);
                     //send data to taskDescription activity
-                    i.putExtra("title", task.title);
-                    i.putExtra("body", task.body);
-                    i.putExtra("state", task.state);
+                    i.putExtra("title", task.getTitle());
+                    i.putExtra("body", task.getBody());
+                    i.putExtra("state", task.getState());
                     v.getContext().startActivity(i);
                 }
             });
@@ -73,9 +74,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         TextView title = holder.itemView.findViewById(R.id.title);
         TextView body = holder.itemView.findViewById(R.id.body);
         TextView state=holder.itemView.findViewById(R.id.state);
-        title.setText(holder.task.title);
-        body.setText(holder.task.body);
-        state.setText(holder.task.state);
+        title.setText(holder.task.getTitle());
+        body.setText(holder.task.getBody());
+        state.setText(holder.task.getState());
 
     }
 

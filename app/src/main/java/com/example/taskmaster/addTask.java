@@ -3,6 +3,9 @@ package com.example.taskmaster;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.amplifyframework.api.graphql.model.ModelMutation;
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Todo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -10,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -39,12 +43,24 @@ public class addTask extends AppCompatActivity {
         EditText et2=findViewById(R.id.body);
         EditText et3=findViewById(R.id.state);
 
+        Todo todo = Todo.builder()
+                .title(et1.getText().toString())
+                .body(et2.getText().toString())
+                .state(et3.getText().toString())
+                .build();
+
+        Amplify.API.mutate(
+                ModelMutation.create(todo),
+                response -> Log.i("MyAmplifyApp", "Added Todo with id: " + response.getData().getId()),
+                error -> Log.e("MyAmplifyApp", "Create failed", error)
+        );
+
         //create new object and add data to it
 
-        Task newTask=new Task(et1.getText().toString(),et2.getText().toString(),et3.getText().toString());
+        //Task newTask=new Task(et1.getText().toString(),et2.getText().toString(),et3.getText().toString());
 
         //save new object in dataBase
-        taskDao.insertOne(newTask);
+       // taskDao.insertOne(newTask);
         Toast.makeText(this,"the task saved you can see it in home",Toast.LENGTH_SHORT).show();
     }
 
